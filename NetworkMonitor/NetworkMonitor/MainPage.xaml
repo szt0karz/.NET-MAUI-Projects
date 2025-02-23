@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkMonitor.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Nagłówek aplikacji -->
+            <Label Text="Network Monitor" 
+                   FontSize="Title"
+                   HorizontalOptions="Center"/>
+
+            <!-- Sekcja wpisywania adresu IP i portu -->
+            <Frame BorderColor="Gray" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Entry x:Name="ipEntry" 
+                           Placeholder="Adres multicastowy"
+                           Keyboard="Text"/>
+
+                    <Entry x:Name="portEntry" 
+                           Placeholder="Port"
+                           Keyboard="Numeric"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Przycisk do rozpoczęcia/zatrzymania monitorowania -->
+            <Button x:Name="monitoringBtn" 
+                    Text="Start Monitoring" 
+                    Clicked="OnToggleMonitoring"
+                    BackgroundColor="{StaticResource Primary}"/>
+
+            <!-- Przycisk do wysłania testowego pakietu -->
+            <Button Text="Wyślij pakiet testowy" 
+                    Clicked="OnSendTestPacket"/>
+
+            <!-- Przycisk do wyświetlania zapisanych logów -->
+            <Button Text="Pokaż logi" 
+                    Clicked="OnShowLogs"/>
+
+            <!-- Status działania aplikacji -->
+            <Label x:Name="statusLabel" 
+                   Text="Status: Nieaktywny"
+                   FontAttributes="Italic"/>
+
+            <!-- Statystyki ruchu sieciowego -->
+            <HorizontalStackLayout Spacing="20">
+                <Label x:Name="trafficLabel" 
+                       Text="0 B"
+                       FontSize="Subtitle"/>
+
+                <Label x:Name="packetCountLabel" 
+                       Text="0 pakietów"
+                       FontSize="Subtitle"/>
+            </HorizontalStackLayout>
+
+            <!-- Sekcja wyświetlania logów -->
+            <Frame BorderColor="LightGray" HeightRequest="200">
+                <ScrollView>
+                    <Label x:Name="logText" 
+                           FontFamily="Monospace"/>
+                </ScrollView>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
