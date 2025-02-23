@@ -1,0 +1,9 @@
+Ten program w .NET MAUI to aplikacja do monitorowania sieci, która nasłuchuje na określonym adresie multicastowym i porcie UDP. Umożliwia użytkownikowi:
+
+1. **Wpisanie adresu multicastowego i portu**, które będą używane do monitorowania sieci.
+2. **Rozpoczęcie i zatrzymanie monitorowania**, gdzie aplikacja odbiera pakiety multicastowe w czasie rzeczywistym.
+3. **Wyświetlanie logów** z odebranych pakietów, które są także zapisywane do pliku na urządzeniu.
+4. **Wysyłanie testowego pakietu multicastowego**, aby sprawdzić połączenie.
+5. **Aktualizację statystyk ruchu sieciowego**, w tym liczby odebranych pakietów i całkowitej liczby przesyłanych bajtów.
+
+Program obsługuje zapisywanie ostatnio używanych ustawień (adresu IP i portu) oraz wyświetlanie zapisanych logów z pliku. Interfejs jest prosty i responsywny, z funkcją przewijania dla logów. Aplikacja jest użyteczna do diagnostyki sieci multicastowej i testowania połączeń.
